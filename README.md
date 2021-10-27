@@ -71,9 +71,12 @@ isi Dashboard admin
 - jumlah berita
 
 fitur :
+
 - Edit profile
 - Search bar 
 - Nambah berita (termaksud upload gambar berita)
 - Nambah fitur komentar
 - Fitur reply
+- Fitur notifikasi
 - ketika reply ada notif
+- Fitur subsciribe berita
