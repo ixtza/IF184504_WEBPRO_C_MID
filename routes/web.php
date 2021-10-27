@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
 Route::get('/berita', [BeritaController::class,'index']);
 
 Route::get('/berita/create', [BeritaController::class,'create']);
@@ -30,3 +34,9 @@ Route::get('/berita/{berita_id}/edit', [BeritaController::class,'edit']);
 Route::put('/berita/{berita_id}', [BeritaController::class,'update']);
 
 Route::delete('/berita/{berita_id}', [BeritaController::class,'destroy']);
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
