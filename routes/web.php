@@ -18,13 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 // user
-Route::group(['prefix' => '', 'middleware' => 'user'], function (){
-    Route::get('/berita', [BeritaController::class,'index'])->name('berita');
-    Route::get('/berita/{berita_id}', [BeritaController::class,'show']);
-});
+// Route::group(['prefix' => '', 'middleware' => 'user'], function (){
+//     Route::get('/berita', [BeritaController::class,'index'])->name('berita');
+//     Route::get('/berita/{berita_id}', [BeritaController::class,'show']);
+// });
 
 //admin
-Route::group(['prefix' => '', 'middleware' => 'admin'], function (){
+Route::group(['prefix' => '', 'middleware' => 'admin', 'as' => 'admin'], function (){
     Route::get('/berita', [BeritaController::class,'index'])->name('berita');
     Route::get('/berita/create', [BeritaController::class,'create']);
     Route::post('/berita', [BeritaController::class,'store']);
