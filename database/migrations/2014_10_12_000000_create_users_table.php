@@ -20,11 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             // role untuk user dan admin
-<<<<<<< HEAD
-            $table->boolean('is_admin');
-=======
             $table->boolean('is_admin')->default('0');
->>>>>>> 639da9048b73fc4253fce919295d8d8decebbb16
             $table->rememberToken();
             $table->timestamps();
         });

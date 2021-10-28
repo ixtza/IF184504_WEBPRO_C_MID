@@ -32,7 +32,7 @@ class BeritaController extends Controller
 
     protected function show($id){
         $berita = DB::table('beritas')->where('id', $id)->first();
-        $tag = DB::table('tag_beritas')->join('berita','tag_berita.berita_id','=',$berita->id)->join('tag','tag_berita.tag_id','=','tag.id')
+        $tag = DB::table('tag_beritas')->join('beritas','tag_beritas.berita_id','=',$berita->id)->join('tags','tag_beritas.tag_id','=','tags    .id')
                 ->select('tag.nama');
 
         return view('berita.show', compact('berita','tag'));
