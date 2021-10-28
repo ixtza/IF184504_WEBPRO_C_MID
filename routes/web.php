@@ -17,26 +17,40 @@ use App\Http\Controllers\BeritaController;
 Route::get('/', function () {
     return view('welcome');
 });
+// user
+Route::group(['prefix' => '', 'middleware' => 'user'], function (){
+    Route::get('/berita', [BeritaController::class,'index'])->name('berita');
+    Route::get('/berita/{berita_id}', [BeritaController::class,'show']);
+});
 
+//admin
+Route::group(['prefix' => '', 'middleware' => 'admin'], function (){
+    Route::get('/berita', [BeritaController::class,'index'])->name('berita');
+    Route::get('/berita/create', [BeritaController::class,'create']);
+    Route::post('/berita', [BeritaController::class,'store']);
+    Route::get('/berita/{berita_id}', [BeritaController::class,'show']);
+    Route::get('/berita/{berita_id}/edit', [BeritaController::class,'edit']);
+    Route::put('/berita/{berita_id}', [BeritaController::class,'update']);
+    Route::delete('/berita/{berita_id}', [BeritaController::class,'destroy']);
 
+});
+// Route::get('/berita', [BeritaController::class,'index'])->name('berita');
 
+// Route::get('/berita/create', [BeritaController::class,'create']);
 
-Route::get('/berita', [BeritaController::class,'index']);
+// Route::post('/berita', [BeritaController::class,'store']);
 
-Route::get('/berita/create', [BeritaController::class,'create']);
+// Route::get('/berita/{berita_id}', [BeritaController::class,'show']);
 
-Route::post('/berita', [BeritaController::class,'store']);
+// Route::get('/berita/{berita_id}/edit', [BeritaController::class,'edit']);
 
-Route::get('/berita/{berita_id}', [BeritaController::class,'show']);
+// Route::put('/berita/{berita_id}', [BeritaController::class,'update']);
 
-Route::get('/berita/{berita_id}/edit', [BeritaController::class,'edit']);
-
-Route::put('/berita/{berita_id}', [BeritaController::class,'update']);
-
-Route::delete('/berita/{berita_id}', [BeritaController::class,'destroy']);
+// Route::delete('/berita/{berita_id}', [BeritaController::class,'destroy']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+

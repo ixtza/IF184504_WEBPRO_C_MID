@@ -79,3 +79,19 @@ fitur :
 - Fitur reply
 - Fitur notifikasi
 - ketika reply ada notif
+
+Akses User :
+- Hanya Melihat Halaman berita
+- Komentar
+- fitur notifikasi
+- search
+- Edit Profile
+- ketika reply ada notif
+
+Akses Admin :
+- CRUD Berita
+- Fitur komentar
+- fitur reply
+- fitur notifikasi
+- Upload gambar berita
+- ketika reply ada notif
