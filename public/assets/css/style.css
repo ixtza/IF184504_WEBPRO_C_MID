@@ -8270,7 +8270,8 @@ textarea.form-control {
 .checkmark {
   position: absolute;
   top: 0;
-  left: 0; }
+  left: 0;
+ }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
