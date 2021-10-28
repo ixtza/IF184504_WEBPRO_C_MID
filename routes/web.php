@@ -17,6 +17,7 @@ use App\Http\Controllers\BeritaController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 // user
 Route::group(['prefix' => '', 'middleware' => 'user'], function (){
     Route::get('/berita', [BeritaController::class,'index'])->name('berita');
