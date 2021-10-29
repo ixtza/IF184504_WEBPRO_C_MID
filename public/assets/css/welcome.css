@@ -1,0 +1,14 @@
+a{
+    text-decoration:none;
+    justify-content: space-between;
+    color: #fff !important;
+}
+
+a:hover{
+    color:blue !important;
+}
+
+.demo{
+    justify-content: space-between;
+    padding: 10px;
+}
